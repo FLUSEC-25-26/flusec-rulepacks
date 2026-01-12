@@ -1,0 +1,7 @@
+{
+  "repoVersion": 1,
+  "updated": "2026-01-12",
+  "components": {
+    "hsd": { "manifestPath": "hsd/manifest.json" }
+  }
+}
