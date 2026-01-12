@@ -1,6 +1,6 @@
 {
-  "minLength": 14,
-  "minEntropy": 3.5,
+  "minLength": 10,
+  "minEntropy": 3.3,
   "sensitiveKeywords": [
     "password",
     "passwd",

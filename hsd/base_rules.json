@@ -31,7 +31,6 @@
     "description": "JWT-like strings may represent auth tokens if hardcoded.",
     "enabled": true
   },
-
   {
     "id": "FLUSEC.GITHUB_TOKEN",
     "name": "GitHub Token (classic)",
