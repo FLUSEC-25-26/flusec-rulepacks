@@ -46,5 +46,14 @@
     "severity": "warning",
     "description": "GitLab PATs must not be hardcoded in client-side apps.",
     "enabled": true
-  }
+  },
+  {
+  "id": "FLUSEC.Rulepack",
+  "name": "FluSec Remote Rulepack Marker",
+  "pattern": "FLUSEC_RP_MARKER_[A-Z]{8}_[0-9]{4}",
+  "severity": "warning",
+  "description": "Marker rule used to verify remote rulepack download + merge pipeline. Not a real secret.",
+  "enabled": true
+}
+
 ]
