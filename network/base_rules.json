@@ -1,0 +1,92 @@
+[
+  {
+    "id": "FLUSEC.NETWORK.HTTP_URL",
+    "checkKey": "http_url",
+    "name": "Insecure HTTP URL",
+    "severity": "warning",
+    "messageTemplate": "Insecure HTTP URL detected. Prefer HTTPS endpoints.",
+    "enabled": true,
+    "description": "Detects usage of plain HTTP URLs (not localhost) which transmit data unencrypted."
+  },
+  {
+    "id": "FLUSEC.NETWORK.WEBSOCKET_INSECURE",
+    "checkKey": "websocket_insecure",
+    "name": "Insecure WebSocket",
+    "severity": "warning",
+    "messageTemplate": "WebSocket uses ws://. Prefer wss:// for TLS.",
+    "enabled": true,
+    "description": "Detects usage of ws:// WebSocket connections instead of secure wss://."
+  },
+  {
+    "id": "FLUSEC.NETWORK.GRPC_INSECURE_CREDENTIALS",
+    "checkKey": "grpc_insecure",
+    "name": "Insecure gRPC Credentials",
+    "severity": "warning",
+    "messageTemplate": "gRPC channel uses insecure credentials (no TLS).",
+    "enabled": true,
+    "description": "Detects ChannelCredentials.insecure() usage in gRPC which disables TLS."
+  },
+  {
+    "id": "FLUSEC.NETWORK.HTTP_OVERRIDES_GLOBAL",
+    "checkKey": "http_overrides_global",
+    "name": "HttpOverrides.global",
+    "severity": "warning",
+    "messageTemplate": "HttpOverrides.global used: overrides network behavior globally.",
+    "enabled": true,
+    "description": "Detects global HTTP override which can bypass security checks application-wide."
+  },
+  {
+    "id": "FLUSEC.NETWORK.INSECURE_TLS_CALLBACK",
+    "checkKey": "insecure_tls_callback",
+    "name": "Insecure TLS Callback",
+    "severity": "warning",
+    "messageTemplate": "badCertificateCallback used. This disables certificate validation.",
+    "enabled": true,
+    "description": "Detects badCertificateCallback usage which can disable TLS certificate validation."
+  },
+  {
+    "id": "FLUSEC.NETWORK.DISABLED_CERT_VALIDATION",
+    "checkKey": "disabled_cert_validation",
+    "name": "Disabled Certificate Validation",
+    "severity": "warning",
+    "messageTemplate": "validateCertificate set to false: TLS certificate validation disabled.",
+    "enabled": true,
+    "description": "Detects validateCertificate being set to false which disables cert checks."
+  },
+  {
+    "id": "FLUSEC.NETWORK.WEAK_HASH_MD5",
+    "checkKey": "weak_hash_md5",
+    "name": "Weak Hash MD5",
+    "severity": "warning",
+    "messageTemplate": "Use of MD5 hash detected. Prefer SHA-256 or stronger.",
+    "enabled": true,
+    "description": "MD5 is cryptographically broken and should not be used for security purposes."
+  },
+  {
+    "id": "FLUSEC.NETWORK.WEAK_HASH_SHA1",
+    "checkKey": "weak_hash_sha1",
+    "name": "Weak Hash SHA-1",
+    "severity": "warning",
+    "messageTemplate": "Use of SHA-1 hash detected. Prefer SHA-256 or stronger.",
+    "enabled": true,
+    "description": "SHA-1 has known collision vulnerabilities and should not be used for security."
+  },
+  {
+    "id": "FLUSEC.NETWORK.DIO_ONHTTPCLIENTCREATE",
+    "checkKey": "dio_onhttpclientcreate",
+    "name": "Dio onHttpClientCreate",
+    "severity": "warning",
+    "messageTemplate": "onHttpClientCreate callback may bypass TLS checks in Dio.",
+    "enabled": true,
+    "description": "Dio's onHttpClientCreate can be used to disable certificate validation."
+  },
+  {
+    "id": "FLUSEC.NETWORK.HTTP_CLIENT_USAGE",
+    "checkKey": "http_client_usage",
+    "name": "HttpClient Usage",
+    "severity": "warning",
+    "messageTemplate": "HttpClient detected. Ensure secure TLS configuration.",
+    "enabled": true,
+    "description": "Direct HttpClient usage requires manual TLS configuration which is often insecure."
+  }
+]
