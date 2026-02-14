@@ -1,0 +1,8 @@
+{
+  "component": "Network",
+  "version": "1.0.0",
+  "updated": "2026-02-14",
+  "files": {
+    "baseRules": "Network/base_rules.json"
+  }
+}
