@@ -1,0 +1,7 @@
+{
+  "component": "storage",
+  "version": "1.0.0",
+  "files": {
+    "base_rules": "base_rules.json"
+  }
+}
