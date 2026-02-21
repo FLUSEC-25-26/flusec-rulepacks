@@ -3,6 +3,7 @@
   "updated": "2026-01-12",
   "components": {
     "hsd": { "manifestPath": "hsd/manifest.json" },
-    "network": { "manifestPath": "network/manifest.json" }
+    "network": { "manifestPath": "network/manifest.json" },
+    "storage": { "manifestPath": "storage/manifest.json" }
   }
 }
