@@ -5,7 +5,8 @@
     "pattern": "^AIza[0-9A-Za-z\\-_]{35}$",
     "severity": "warning",
     "description": "Google API keys must not be hardcoded in client-side code.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "FIREBASE_KEY"
   },
   {
     "id": "FLUSEC.AWS_ACCESS_KEY",
@@ -13,7 +14,8 @@
     "pattern": "^AKIA[0-9A-Z]{16}$",
     "severity": "warning",
     "description": "AWS access keys must not be embedded in Flutter apps.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "API_KEY"
   },
   {
     "id": "FLUSEC.STRIPE_LIVE_KEY",
@@ -21,7 +23,8 @@
     "pattern": "^sk_live_[0-9A-Za-z]{16,}$",
     "severity": "warning",
     "description": "Stripe live secret keys must never exist in client apps.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "SECRET_KEY"
   },
   {
     "id": "FLUSEC.JWT",
@@ -29,7 +32,8 @@
     "pattern": "eyJ[A-Za-z0-9\\-_]+\\.[A-Za-z0-9\\-_]+\\.[A-Za-z0-9\\-_]+",
     "severity": "warning",
     "description": "JWT-like strings may represent auth tokens if hardcoded.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "JWT_TOKEN"
   },
   {
     "id": "FLUSEC.GITHUB_TOKEN",
@@ -37,7 +41,8 @@
     "pattern": "^ghp_[A-Za-z0-9]{36}$",
     "severity": "warning",
     "description": "GitHub tokens must not be hardcoded in source code.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "API_KEY"
   },
   {
     "id": "FLUSEC.GITLAB_PAT",
@@ -45,15 +50,16 @@
     "pattern": "^glpat-[A-Za-z0-9\\-_]{20,}$",
     "severity": "warning",
     "description": "GitLab PATs must not be hardcoded in client-side apps.",
-    "enabled": true
+    "enabled": true,
+    "secretType": "API_KEY"
   },
   {
-  "id": "FLUSEC.Rulepack",
-  "name": "FluSec Remote Rulepack Marker",
-  "pattern": "FLUSEC_RP_MARKER_[A-Z]{8}_[0-9]{4}",
-  "severity": "warning",
-  "description": "Marker rule used to verify remote rulepack download + merge pipeline. Not a real secret.",
-  "enabled": true
-}
-
+    "id": "FLUSEC.Rulepack",
+    "name": "FluSec Remote Rulepack Marker",
+    "pattern": "FLUSEC_RP_MARKER_[A-Z]{8}_[0-9]{4}",
+    "severity": "warning",
+    "description": "Marker rule used to verify remote rulepack download + merge pipeline. Not a real secret.",
+    "enabled": true,
+    "secretType": "GENERIC_SECRET"
+  }
 ]
