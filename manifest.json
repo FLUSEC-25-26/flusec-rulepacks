@@ -4,6 +4,7 @@
   "components": {
     "hsd": { "manifestPath": "hsd/manifest.json" },
     "network": { "manifestPath": "network/manifest.json" },
-    "storage": { "manifestPath": "storage/manifest.json" }
+    "storage": { "manifestPath": "storage/manifest.json" },
+    "input_validation": { "manifestPath": "input_validation/manifest.json" }
   }
 }
