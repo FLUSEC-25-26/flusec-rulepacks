@@ -1,0 +1,47 @@
+[
+  {
+    "id": "FLUSEC.IIV.001",
+    "name": "SQL Injection",
+    "description": "Potential SQL Injection: String interpolation used in database query method. Use parameterized queries instead.",
+    "severity": "error",
+    "remediation": "Replace string interpolation with parameterized queries. Use positional arguments (?) in rawQuery/rawInsert/rawDelete/rawUpdate.",
+    "checkKey": "sql_injection",
+    "targetFunctions": ["rawQuery", "rawInsert", "rawDelete", "rawUpdate", "execute"]
+  },
+  {
+    "id": "FLUSEC.IIV.002",
+    "name": "Command Injection",
+    "description": "Potential Command Injection: User input may be passed to a system process execution method.",
+    "severity": "error",
+    "remediation": "Never pass unsanitized user input to Process.run or Process.start. Use allow-lists for permitted commands and validate all arguments.",
+    "checkKey": "command_injection",
+    "targetFunctions": ["run", "start", "runSync"]
+  },
+  {
+    "id": "FLUSEC.IIV.003",
+    "name": "Unsafe File Upload",
+    "description": "File upload method called without allowedExtensions filter. Unrestricted file types may lead to malicious file uploads.",
+    "severity": "warning",
+    "remediation": "Always specify allowedExtensions when using file picker methods to restrict accepted file types (e.g., ['jpg', 'png', 'pdf']).",
+    "checkKey": "unsafe_file_upload",
+    "targetFunctions": ["pickFiles", "pickImage", "pickVideo", "pickMedia"]
+  },
+  {
+    "id": "FLUSEC.IIV.004",
+    "name": "Deep Link Poisoning",
+    "description": "Deep link URI obtained without validation. Malicious URIs can redirect users or inject parameters.",
+    "severity": "warning",
+    "remediation": "Validate and sanitize all deep link parameters before use. Check URI scheme, host, and path against an allow-list.",
+    "checkKey": "deep_link_poisoning",
+    "targetFunctions": ["getInitialLink", "onLink", "getInitialUri", "uriLinkStream"]
+  },
+  {
+    "id": "FLUSEC.IIV.005",
+    "name": "Missing Form Validation",
+    "description": "TextFormField created without a validator function. User input will not be validated before submission.",
+    "severity": "warning",
+    "remediation": "Add a validator parameter to TextFormField that checks input format, length, and content. Use RegExp for email, phone, and other structured inputs.",
+    "checkKey": "missing_form_validation",
+    "targetFunctions": ["TextFormField"]
+  }
+]
