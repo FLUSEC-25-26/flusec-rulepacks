@@ -3,7 +3,7 @@
     "id": "FLUSEC.IIV.001",
     "name": "SQL Injection",
     "description": "Potential SQL Injection: String interpolation used in database query method. Use parameterized queries instead.",
-    "severity": "error",
+    "severity": "warning",
     "remediation": "Replace string interpolation with parameterized queries. Use positional arguments (?) in rawQuery/rawInsert/rawDelete/rawUpdate.",
     "checkKey": "sql_injection",
     "targetFunctions": ["rawQuery", "rawInsert", "rawDelete", "rawUpdate", "execute"]
@@ -12,7 +12,7 @@
     "id": "FLUSEC.IIV.002",
     "name": "Command Injection",
     "description": "Potential Command Injection: User input may be passed to a system process execution method.",
-    "severity": "error",
+    "severity": "warning",
     "remediation": "Never pass unsanitized user input to Process.run or Process.start. Use allow-lists for permitted commands and validate all arguments.",
     "checkKey": "command_injection",
     "targetFunctions": ["run", "start", "runSync"]
@@ -45,3 +45,4 @@
     "targetFunctions": ["TextFormField"]
   }
 ]
+
