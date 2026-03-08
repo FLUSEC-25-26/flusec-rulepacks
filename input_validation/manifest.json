@@ -1,7 +1,8 @@
 {
   "component": "input_validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "files": {
     "base_rules": "base_rules.json"
   }
 }
+
