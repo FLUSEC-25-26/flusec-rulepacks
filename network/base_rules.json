@@ -88,5 +88,42 @@
     "messageTemplate": "HttpClient detected. Ensure secure TLS configuration.",
     "enabled": true,
     "description": "Direct HttpClient usage requires manual TLS configuration which is often insecure."
+  },
+  {
+    "id": "FLUSEC.NETWORK.TRY_CATCH_DOWNGRADE",
+    "checkKey": "try_catch_downgrade",
+    "name": "Protocol Downgrade in Try/Catch",
+    "severity": "high",
+    "messageTemplate": "Avoid downgrading secure connections (HTTPS) to unencrypted HTTP inside error handlers.",
+    "enabled": true,
+    "description": "Detects logic that catches an HTTPS connection failure and falls back to an insecure HTTP connection."
+  },
+  {
+    "id": "FLUSEC.NETWORK.DEBUG_MODE_FALLBACK",
+    "checkKey": "debug_mode_fallback",
+    "name": "Environment HTTP Fallback",
+    "severity": "medium",
+    "messageTemplate": "Ensure debug mode toggles do not leak insecure HTTP endpoints into release builds.",
+    "enabled": true,
+    "description": "Detects conditional logic using kDebugMode that allows the app to fall back to unencrypted HTTP."
+  },
+  {
+    "id": "FLUSEC.NETWORK.WEAK_TLS_FALLBACK",
+    "checkKey": "weak_tls_fallback",
+    "name": "Weak TLS Protocol Fallback",
+    "severity": "high",
+    "messageTemplate": "Do not allow fallbacks to TLS 1.0 or 1.1. Enforce a minimum of TLS 1.2.",
+    "enabled": true,
+    "description": "Detects SecurityContext configurations that permit fallback to outdated and vulnerable TLS versions."
+  },
+  {
+    "id": "FLUSEC.NETWORK.WEBVIEW_MIXED_CONTENT",
+    "checkKey": "webview_mixed_content",
+    "name": "WebView Mixed Content Allowed",
+    "severity": "medium",
+    "messageTemplate": "Do not allow WebViews to load insecure HTTP content within secure HTTPS pages.",
+    "enabled": true,
+    "description": "Detects WebView configurations that explicitly allow mixed content, breaking the HTTPS guarantee."
   }
 ]
+
