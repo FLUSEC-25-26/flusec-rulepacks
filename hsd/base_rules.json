@@ -61,5 +61,14 @@
     "description": "Marker rule used to verify remote rulepack download + merge pipeline. Not a real secret.",
     "enabled": true,
     "secretType": "GENERIC_SECRET"
-  }
+  },
+  {
+  "id": "FLUSEC.TWILIO_SID",
+  "name": "Twilio Account SID",
+  "pattern": "AC[a-f0-9]{32}",
+  "severity": "warning",
+  "description": "Detects Twilio Account SIDs. Exposing this allows attackers to send SMS/Calls at your expense.",
+  "enabled": true,
+  "secretType": "API_KEY"
+}
 ]
