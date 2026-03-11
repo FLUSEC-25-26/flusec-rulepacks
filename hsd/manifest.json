@@ -1,6 +1,6 @@
 {
   "component": "hsd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "updated": "2026-01-12",
   "files": {
     "baseRules": "hsd/base_rules.json",
